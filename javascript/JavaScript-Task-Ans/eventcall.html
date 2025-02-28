@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <input type="text" id="blur" onblur="blurfun()" placeholder="Enter Digit">
+                    <br>
+                    <select name="Fruit" id="change" onchange="changefun()">
+                        <option value="Apple">Apple</option>
+                        <option value="Banana">Banana</option>
+                        <option value="Mango">Mango</option>
+                    </select>
+                    <div id="display"> </div>
+                    <br><br>
+                    <button onclick="cli()">Message</button>
+                    <br><br>
+                    <input type="text" id="name" onblur="greek()" placeholder="Enter Name">
+                </div>
+            </div>
+        </div>
+    </body>
+<script>
+function blurfun(){
+    let a = document.getElementById('blur');
+    let value = a.value.trim();
+    if(value==0)
+    {
+        alert('must be gretter then 0 and not null');
+    } else if (value == 0 || isNaN(value) || value<=0)
+    {
+        alert('value is must be number');
+    }
+}
+function changefun()
+{
+    var con = confirm('dp you want to print the fruit name?');
+    if (con == true)
+    {
+        document.getElementById('display').innerHTML = document.getElementById('change').value ;
+    } else {
+        document.getElementById('display').innerHTML = "Value Not Display" ;
+    }
+}
+function cli()
+{
+    alert("Hello There");
+}
+function greek()
+{
+    let nam = document.getElementById('name').value;
+    let val = document.getElementById('blur').value;
+    let val1 = document.getElementById('change').value;
+    alert("Hello," + nam + "you Entered/selected," + val + " , " + val1);
+}
+</script>
+</html>

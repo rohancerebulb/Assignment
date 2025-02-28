@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.on1{
+    list-style-type: none;
+}
+.fruits {
+  display: flex;
+  padding-inline-start: 0;
+  list-style: none;
+}
+.fruit {
+  display: none; 
+} 
+.fruit.on { 
+  display: inline-block;
+}
+.fruit.on ~ .fruit.on::before {
+  content: ', '; 
+}
+</style>
+</head>
+<body>
+<ol>
+    <li><b>one</b></li>
+    <ol type="a">
+        <li>uno</li>
+        <li>hanna</li>
+    </ol>
+    <li><b>two</b></li>
+    <ol type="a">
+        <li>dos</li>
+        <li>dool</li>
+    </ol>
+    <li><b>three</b></li>
+    <ol type="a">
+        <li>tres</li>
+        <li>set</li>
+    </ol>
+</ol>
+<br>
+<ul>
+    <li>Chevy</li>
+    <ul type="circle">
+        <li>Cavaker</li>
+        <li>Maito</li>
+    </ul>
+    <li>Food</li>
+    <ul type="circle">
+        <li>Escort</li>
+        <li>F100</li>
+    </ul>
+    <li>Manda</li>
+    <ul type="circle">
+        <li>626</li>
+    </ul>
+</ul>
+<br>
+<ul style="list-style-type: none;padding: 0;">
+    <li style="list-style-type: none;padding: 0;"><u>Fruit</u></li>
+    <ul >
+        <li class="fruit on">Apple</li>
+        <li class="fruit on">Orange</li>
+        <li class="fruit on">Pear</li>
+        <li class="fruit on">Banana</li>
+      </ul>
+</ul>
+<br>
+<ul style="list-style-type: none;padding: 0;">
+    <li style="list-style-type: none;padding: 0;"><u>Vegitabbles</u></li>
+    <ul >
+        <li class="on1">Corn</li>
+        <ul>
+            <li class="on1">on the cob</li>
+            <li class="on1">cream</li>
+        </ul>
+        <li class="on1">Carrots</li>
+        <li class="on1">Green Beans</li>
+
+      </ul>
+</ul>
+
+
+
+</body>
+</html>

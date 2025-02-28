@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of JS</title>
+</head>
+<body>
+    <select name="address" id="addressdetails" onchange="addressfunction()">
+        <option value="" >SELECT YOUR ADRESS DETAILS</option>
+        <option value="Personal">Personal</option>
+        <option value="Office">Office</option>
+    </select>
+    <div id="personaldiv" hidden>
+        <h2>Enter Your Personal Address</h2>
+    </div>
+    <div id="officediv" hidden>
+        <h2>Enter Your Office Address</h2>
+    </div>
+    <div id="feild" hidden>
+        <form action="home.html" method="GET">
+            <input type="text" name="AreaOfAddress" hidden><br/>
+            <input type="text" name="FlatorBlockno" class="requierd" placeholder="Flat/Block Number"><br/>
+            <input type="text" name="Line1" class="requierd" placeholder="Line 1"><br/>
+            <input type="text" name="Line2" placeholder="Line 2 (optional)"><br/>
+            <input type="number" name="pincode" class="requierd" placeholder="PIN CODE"><br/>
+            <input type="text" id="city" class="requierd" placeholder="Enter City" hidden><br/>
+            <button>Submit</button>
+        </form>
+    </div>
+    <div id="demo"></div>
+<script>
+function addressfunction()
+{
+    let addressvalue = document.getElementById("addressdetails").value;
+    document.getElementById("demo").innerHTML=addressvalue;
+    let req = document.querySelectorAll(".requierd");
+    document.getElementById("city").style.display="none";
+    document.getElementsByName("AreaOfAddress").forEach(el => el.value = addressvalue);
+    document.getElementById("officediv").style.display="none";
+    document.getElementById("personaldiv").style.display="none";
+    document.getElementById("feild").style.display="none";
+    if(addressvalue=="Personal")
+    {
+        document.getElementById("personaldiv").style.display="block";
+        document.getElementById("feild").style.display="block";
+        document.getElementById("officediv").style.display="none";
+        document.getElementById("city").style.display="none";
+        document.querySelectorAll(".requierd").forEach(req => req.required = true);
+        document.getElementById("city").required= false;
+    }else if(addressvalue=="Office")
+    {
+        document.getElementById("officediv").style.display="block";
+        document.getElementById("feild").style.display="block";
+        document.getElementById("city").style.display="block";
+        document.getElementById("city").name="city";
+        document.getElementById("personaldiv").style.display="none";
+        document.querySelectorAll(".requierd").forEach(req => req.required = true);
+    }
+}
+</script>
+</body>
+</html>

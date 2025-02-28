@@ -1,0 +1,103 @@
+.storedetailhead ul {
+    background-image: url('../image/shopblack.jpg');
+    object-fit: cover;
+    height: 100px;
+}
+.noUi-connect { background: #000000;}
+.rightarrowimage {
+    background-image: url('image/right-arrow.png');
+}
+.accordion-button:focus,.accordion-button:active {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+.accordion-button:focus {
+    box-shadow: none;
+}
+.accordion-button:active {
+    border-color: none;
+}
+.accordion-button:not(.collapsed) {
+color: rgb(0, 0, 0);
+background-color: #ffffff;
+box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+.dropdown-toggle::after {
+    content: none;
+}
+input[type='range']::-webkit-slider-thumb {
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+}
+.position-relative:hover .hoverbutton {
+  display: inline-block !important;
+}
+.discovercreation img{
+    height: 580px;
+    width: 100%;
+}
+.discovercreationcard .card-header{
+    background-color: transparent;
+}
+.discovercreationcard {
+    font-size:larger;
+    transition: all 0.2s ease-out;
+}
+.discovercreationcard:hover,.newarrivalcard:hover{
+    transform: scale(1.05);
+}
+.newarrivalcard {
+    transition: all 0.2s ease-out;
+}
+.nav-item a:hover {
+font-size: 18px;
+text-decoration: underline;
+}
+.videowidth {
+    width: 30%;
+}
+svg {
+    position: fixed;
+    bottom: 4%;
+    right: 1%;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: rotate 1s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.breadcrumb a {
+    color: rgb(228, 207, 181);
+}
+.footercolor{
+    background-color: rgb(250, 235, 215);
+}
+.justifytext
+{
+    text-align: justify;
+    font-size:23px;
+}
+.justifytext::first-letter {
+    font-size: 200%;
+    font-weight: bold;
+    color: #8A2BE2;
+}
+
+  .breadcontainer {
+    position: relative;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+  .breadtextcentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

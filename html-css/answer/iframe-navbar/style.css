@@ -1,0 +1,86 @@
+.box
+{
+    width: 40%;
+    border: solid black 1px;
+}
+th,tr,td
+{
+    border: solid gray 1px;
+    width: auto;
+}
+table
+{
+    width: 100%;
+}
+.padhead
+{
+    padding-left: 5px;
+    float: left;
+}
+.fright
+{
+    float: right;
+}
+.bornone
+{
+    border: none;
+}
+
+
+
+
+.redoutline
+{
+    border: solid red 2px;
+}
+
+.container {
+    width: 40%;
+}
+
+.r1, .r3 {
+    height: 100px;
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+}
+
+.r2 {
+    height: 400px;
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+}
+
+.r2 .col-3, .r2 .col-9 {
+    height: 400px;
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    /* Removed padding-top */
+}
+
+.r1 .col-3 {
+    height: 70px;
+    width: 90px;
+    border: solid red 2px;
+}
+
+
+
+.laybod {
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fot {
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+}
+
+.hed {
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+}

@@ -1,0 +1,46 @@
+.container 
+{
+    width: 40%;
+}
+.r1,.r3
+{
+    border: solid red 2px;
+    height:100px;
+}
+.r2
+{
+    border: solid red 2px;
+    height: 400px;
+}
+.r2 .col-3,.r2 .col-9
+{
+    border: solid red 2px;
+    padding-top: 28%;
+}
+.r1 .col-3
+{
+    
+    padding: 10px;
+
+}
+.logomar
+{
+    margin: 2%;
+    text-align: center; 
+    border: solid red 2px;
+    height: 70px;
+}
+.laybod
+{
+    color:red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.fot
+{
+    justify-content: center;
+    text-align: center;   
+}
+.hed
+{
+    vertical-align: middle;
+}

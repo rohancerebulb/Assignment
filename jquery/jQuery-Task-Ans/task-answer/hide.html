@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <title>JQuery</title>
+    </head>
+    <style>
+        #panel, #flip {
+            padding: 5px;
+        }
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+        .box{
+            height: 75px;
+            width: 75px;
+            background: black;
+            position: absolute;
+        }
+    </style>
+    <body>
+        <p id="text">Rohan</p>
+        <p>Hello im p tag</p>
+        <p>Hello im p tag</p>
+        <p class="test">Hello im p tag with test class</p>
+        <p class="test">Hello im p tag with test class</p>
+        <b class="test">Hello im b tag with test class</b>
+        <br>
+        <h1 id="test">Hello im h1 tag with test id</h1>
+        <h1 id="test1">Hello im h1 <span>tag with</span> test id</h1>
+        <input type="button" value="Hide Rohan" id="hideButton">
+        <br>
+        <input type="button" value="Hide P tag" id="hideButton1">
+        <br>
+        <input type="button" value="Hide P tag with test class" id="hideButton2">
+        <br>
+        <input type="button" value="Hide everything those id is test" id="hideButton3">
+        <br>
+        <input type="button" value="Hide some part" id="hideButton4">
+        <br>
+        <h3 class="fade">Hello Click Fade than i am fadeout</h3>
+        <input type="button" value="Fade" id="fadeButton">
+        <br>
+        <br>
+        <div id="flip">Click to slide the panel down or up</div>
+        <div id="panel">Rohan</div>
+        <br><br>
+        <button class="btnl">Click to Animate Left</button>
+        <button class="btnr">Click to Animate Right</button>
+        <div class="box"></div>
+        <br><br>
+        <br><br><br><br>
+        <button class="change">Click here to chnage the text</button>
+        <h1 class="changetext">Rohan Parikh</h1>
+        <br>
+        <button class="app">Click to add text on contain</button>
+        <b class="appendtext">New contain will add after me</b>
+        <br>
+        <button class="after">After</button>
+        <br>
+        <span class="af">New Contain After me: </span>
+        <br>
+        <button class="c">Click</button>
+        <u class="cs">Rohan Parikh</u>
+        <br><br>
+        <button class="loa">Click to change the data in load</button>
+        <button class="in">Click for load</button>
+        <b class="loadcontain">I'm the load</b>
+        <br><br>
+        <button class="ajaxbut">Click to alret using ajax</button>
+        <div class="content">Content will be loaded here...</div>
+    </body>
+    <script>
+        $(document).ready(function() 
+        {
+            $("#hideButton").click(function() 
+            {
+                $("#text").hide();
+            });
+
+            $("#hideButton1").click(function() 
+            {
+                $("p").hide();
+            });
+
+            $("#hideButton2").click(function() 
+            {
+                $(".test").hide();
+            });
+
+            $("#hideButton3").click(function() 
+            {
+                $("#test").hide();
+            });
+            $("#hideButton4").click(function() 
+            {
+                $("#test1 span").hide();
+            });
+            $("#fadeButton").click(function() 
+            {
+                $(".fade").fadeOut();
+            });
+            $("#flip").click(function()
+            {
+                $("#panel").slideToggle("slow");
+            });
+            $(".btnr").click(function()
+            {
+                $(".box").animate({left: '250px'});
+            });
+            $(".btnl").click(function()
+            {
+                $(".box").animate({left: '10px'});
+            });
+            $(".change").click(function()
+            {
+                $(".changetext").html("I changed");
+            });
+            $(".app").click(function()
+            {
+                $(".appendtext").append(" I am appended");
+            });
+            $(".after").click(function()
+            {
+                $(".af").after(" Added");
+            });
+            $(".c").click(function()
+            {
+                $(".cs").css({
+                    "color":"red",
+                    "font-size":"30px"
+                });
+                alert($(".cs").css("font-family"));
+            });
+            $(".in").click(function()
+            {
+                $(".loadcontain").load("file1.html");
+            });
+        });
+    </script>
+        <script>
+            $(document).ready(function() {
+                $(".ajaxbut").click(function() {
+                    $.ajax({
+                        url: "file1.html", // Fetches file1.html
+                        success: function(result) {
+                            $(".content").html(result); // Inserts content into #content
+                            alert("Content loaded successfully!");
+                        },
+                        error: function(xhr, status, error) {
+                            alert("Error: " + xhr.status + " " + xhr.statusText);
+                        }
+                    });
+                });
+            });
+        </script>
+</html>

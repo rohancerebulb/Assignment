@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event</title>
+    </head>
+    <body onload="load()">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <input type="text" id="foc" onfocus="focusfun()">
+                    <br><br>
+                    <p id="mou" onmouseout="mout()" onmouseover="mover()">Hello</p>
+                    <br><br>
+                    <form onreset="res()">
+                        Enter: <input type="text">
+                        <input type="reset">
+                    </form>
+                    <br><br>
+                    <textarea onselect="textSelect()" rows="3">My name is Rohan Parikh, I'm from Jamnagar.</textarea>
+                    <br><br>
+                    <form action="" onsubmit="sub()">
+                        Enter: <input type="text">
+                        <input type="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+<script>
+function focusfun() 
+{
+  document.getElementById("foc").style.backgroundColor = "lightyellow";
+}
+function load()
+{
+    alert('page loaded');
+}
+function mover()
+{
+    document.getElementById('mou').innerText = "Hello, Mouse is over";
+    document.getElementById('mou').style.color = "red";
+}
+function mout()
+{
+    document.getElementById('mou').innerText = "Hello, Mouse is out";
+    document.getElementById('mou').style.color = "black";
+}
+function res() 
+{
+  alert("Form Reseted");
+}
+function textSelect() 
+{
+    alert("Text is select!");
+}
+function sub() 
+{
+  alert("Form Submited");
+}
+window.onbeforeunload = function () {
+    return "Are you sure you want to leave?";
+};
+</script>
+</html>

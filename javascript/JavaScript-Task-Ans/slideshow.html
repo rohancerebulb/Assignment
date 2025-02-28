@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            img
+            {
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="slideshow">
+                        <img id="image" src="image1.jpg" alt="Slideshow Image">
+                    </div>
+                    
+                    <button id="prev" onclick="prevImage()" disabled>Previous</button>
+                    <button id="next" onclick="nextImage()">Next</button>
+                
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"];
+        let id = 0;
+
+        function updateImage() {
+            document.getElementById("image").src = images[id];
+            document.getElementById("prev").disabled = (id === 0);
+            document.getElementById("next").disabled = (id === images.length - 1);
+        }
+
+        function prevImage() {
+            if (id > 0) {
+                id--;
+                updateImage();
+            }
+        }
+
+        function nextImage() {
+            if (id < images.length - 1) {
+                id++;
+                updateImage();
+            }
+        }
+    </script>
+</html>
