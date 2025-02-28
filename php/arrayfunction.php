@@ -47,6 +47,42 @@
             echo "<br/>";
             print_r(array_fill(0,5,"NAME"));
             echo "<br/>";
+            print_r(array_flip($aa));
+            echo "<br/>";
+            print_r(array_intersect($arr1,$arr2));
+            echo "<br/>";
+            print_r(array_intersect_assoc($arr1,$arr2));
+            echo "<br/>";
+            print_r(array_intersect_key($arr1,$arr2));
+            echo "<br/>";
+            print_r(array_intersect_ukey($arr1,$arr2,"ukeyfun"));
+            echo "<br/>";
+            print_r(array_key_exists("a",$arr1));
+            echo "<br/>";
+            print_r(array_keys($arr1));
+            echo "<br/>";
+            // print_r(array_map("myfun",$a));
+            echo "<br/>";
+            print_r(array_merge($a,$a2));
+            echo "<br/>";
+            print_r(array_merge_recursive($a,$a2));
+            echo "<br/>";
+            print_r(array_multisort($a,$b));
+            echo "<br/>";
+            print_r(array_pad($a,5,"pad"));
+            echo "<br/>";
+            print_r(array_pop($a));
+            echo "<br/>";
+            print_r(array_product($b));
+            echo "<br/>";
+            print_r(array_push($a,"push"));
+            echo "<br/>";
+            print_r(array_rand($a));
+            echo "<br/>";
+            // print_r(array_reduce($b,"reducefun"));
+            echo "<br/>";
+            print_r(array_replace($a,$a2));
+            echo "<br/>";
 
 
 
