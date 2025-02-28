@@ -7,19 +7,19 @@
     </head>
     <body>
         <?php 
-            $a=array("Rohan","Meet","Meet");
-            $a2=array("PHP","Python","HTML");
-            $b=array(5,10,3);
-            $aa=array("a"=>"Rohan","b"=>"Parikh");
+            $namearray=array("Rohan","Meet","Meet");
+            $domainarray=array("PHP","Python","HTML");
+            $numberarray=array(5,10,3);
+            $namewithkey=array("a"=>"Rohan","b"=>"Parikh");
             $colors=array("o"=>"orange","r"=>"red");
             $cars=array("model"=>array("type"=>"sport","name"=>"honda"));
-            $arr1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
-            $arr2=array("a"=>"red","b"=>"green","c"=>"bluee");
-            print_r($a);
+            $keywithcolorsarray=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
+            $keywithcolorsarray2=array("a"=>"red","b"=>"green","c"=>"bluee");
+            print_r($namearray);
             echo "<br/>";
-            print_r($b);
+            print_r($numberarray);
             echo "<br/>";
-            print_r($aa);
+            print_r($namewithkey);
             echo "<br/>";
             print_r($colors);
             echo "<br/>";
@@ -27,69 +27,61 @@
             echo "<br/>";
             echo "<br/>";
             // split an array in the given number in parameter
-            print_r(array_chunk($a,1));
-            echo "<br/>";
-            print_r(array_combine($a,$a2));
-            echo "<br/>";
-            // in count_value if in $a array rohan comes only one time then returns a and if meet comes 2 times than returns meet => 2
-            print_r(array_count_values($a));
-            echo "<br/>";
+            printData(array_chunk($namearray,1));
+            printData(array_combine($namearray,$domainarray));
+            // in count_value if in $namearray array rohan comes only one time then returns a and if meet comes 2 times than returns meet => 2
+            printData(array_count_values($namearray));
             // This function compares the values of two (or more) arrays, and return an array that contains the entries from array1 that are not present in array2 or array3, etc
-            print_r(array_diff($aa,$colors));
-            echo "<br/>";
+            printData(array_diff($namewithkey,$colors));
             // Compare the keys and values of two arrays, and return the differences
-            print_r(array_diff_assoc($arr1,$arr2));
-            echo "<br/>";
+            printData(array_diff_assoc($keywithcolorsarray,$keywithcolorsarray2));
             // compare only keys
-            print_r(array_diff_key($arr1,$arr2));
-            echo "<br/>";
-            print_r(array_diff_ukey($arr1,$arr2,"ukeyfun"));
-            echo "<br/>";
-            print_r(array_fill(0,5,"NAME"));
-            echo "<br/>";
-            print_r(array_flip($aa));
-            echo "<br/>";
-            print_r(array_intersect($arr1,$arr2));
-            echo "<br/>";
-            print_r(array_intersect_assoc($arr1,$arr2));
-            echo "<br/>";
-            print_r(array_intersect_key($arr1,$arr2));
-            echo "<br/>";
-            print_r(array_intersect_ukey($arr1,$arr2,"ukeyfun"));
-            echo "<br/>";
-            print_r(array_key_exists("a",$arr1));
-            echo "<br/>";
-            print_r(array_keys($arr1));
-            echo "<br/>";
-            // print_r(array_map("myfun",$a));
-            echo "<br/>";
-            print_r(array_merge($a,$a2));
-            echo "<br/>";
-            print_r(array_merge_recursive($a,$a2));
-            echo "<br/>";
-            print_r(array_multisort($a,$b));
-            echo "<br/>";
-            print_r(array_pad($a,5,"pad"));
-            echo "<br/>";
-            print_r(array_pop($a));
-            echo "<br/>";
-            print_r(array_product($b));
-            echo "<br/>";
-            print_r(array_push($a,"push"));
-            echo "<br/>";
-            print_r(array_rand($a));
-            echo "<br/>";
-            // print_r(array_reduce($b,"reducefun"));
-            echo "<br/>";
-            print_r(array_replace($a,$a2));
-            echo "<br/>";
+            printData(array_diff_key($keywithcolorsarray,$keywithcolorsarray2));
+            // compare only keys and values
+            printData(array_diff_ukey($keywithcolorsarray,$keywithcolorsarray2,"ukeyfun"));
+            printData(array_fill(0,5,"NAME"));
+            printData(array_fill_keys($namearray,"NAME"));
+            printData(array_flip($namewithkey));
+            printData(array_intersect($keywithcolorsarray,$keywithcolorsarray2));
+            printData(array_intersect_assoc($keywithcolorsarray,$keywithcolorsarray2));
+            printData(array_intersect_key($keywithcolorsarray,$keywithcolorsarray2));
+            printData(array_intersect_ukey($keywithcolorsarray,$keywithcolorsarray2,"ukeyfun"));
+            printData(array_key_exists("a",$keywithcolorsarray));
+            printData(array_keys($keywithcolorsarray));
+            // printData(array_map("myfun",$namearray));
+            printData(array_merge($namearray,$domainarray));
+            printData(array_merge_recursive($namearray,$domainarray));
+            printData(array_multisort($namearray,$numberarray));
+            printData(array_pad($namearray,5,"pad"));
+            printData(array_pop($namearray));
+            printData(array_product($numberarray));
+            printData(array_push($namearray,"push"));
+            printData(array_rand($namearray));
+            // printData(array_reduce($numberarray,"reducefun"));
+            printData(array_replace($namearray,$domainarray));
+            printData(array_replace_recursive($namearray,$domainarray));
+            printData(array_reverse($namearray));
+            printData(array_search("Meet",$namearray));
+            printData(array_shift($namearray));
+            printData(array_slice($namearray,1));
+            printData(array_sum($numberarray));
+            printData(array_udiff($keywithcolorsarray,$keywithcolorsarray2,"ukeyfun"));
+            printData(array_udiff_assoc($keywithcolorsarray,$keywithcolorsarray2,"ukeyfun"));
+            printData(array_udiff_uassoc($keywithcolorsarray,$keywithcolorsarray2,"ukeyfun","ukeyfun"));
+            printData(array_unique($namearray));
+            printData(array_unshift($namearray,"unshift"));
+            printData(array_values($namewithkey));
 
 
-
-            function ukeyfun($a,$b){
-                if($a===$b)
+            function ukeyfun($namearray,$numberarray){
+                if($namearray===$numberarray)
                     return 0;    
-                return ($a>$b)?1:-1;
+                return ($namearray>$numberarray)?1:-1;
+            }
+
+            function printData($functionData){
+                print_r($functionData);
+                echo "<br/>";
             }
         ?>
     </body>
