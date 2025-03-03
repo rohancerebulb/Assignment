@@ -7,6 +7,7 @@
     </head>
     <body>
         <?php 
+            echo "This is array for the examples.<br/>";
             $namearray=array("Rohan","Meet","Meet");
             $domainarray=array("PHP","Python","HTML");
             $numberarray=array(5,10,3);
@@ -48,7 +49,6 @@
             printData(array_intersect_ukey($keywithcolorsarray,$keywithcolorsarray2,"ukeyfun"));
             printData(array_key_exists("a",$keywithcolorsarray));
             printData(array_keys($keywithcolorsarray));
-            // printData(array_map("myfun",$namearray));
             printData(array_merge($namearray,$domainarray));
             printData(array_merge_recursive($namearray,$domainarray));
             printData(array_multisort($namearray,$numberarray));
@@ -57,7 +57,6 @@
             printData(array_product($numberarray));
             printData(array_push($namearray,"push"));
             printData(array_rand($namearray));
-            // printData(array_reduce($numberarray,"reducefun"));
             printData(array_replace($namearray,$domainarray));
             printData(array_replace_recursive($namearray,$domainarray));
             printData(array_reverse($namearray));
@@ -69,16 +68,20 @@
             printData(array_udiff_assoc($keywithcolorsarray,$keywithcolorsarray2,"ukeyfun"));
             printData(array_udiff_uassoc($keywithcolorsarray,$keywithcolorsarray2,"ukeyfun","ukeyfun"));
             printData(array_unique($namearray));
-            printData(array_unshift($namearray,"unshift"));
             printData(array_values($namewithkey));
+            printData(array_key_first($namewithkey));
+            printData(array_key_last($namewithkey));
+            printData(array_walk($domainarray,"walkfun"));
 
 
+            function walkfun($value,$key){
+                echo "$key => $value<br/>";
+            }
             function ukeyfun($namearray,$numberarray){
                 if($namearray===$numberarray)
                     return 0;    
                 return ($namearray>$numberarray)?1:-1;
             }
-
             function printData($functionData){
                 print_r($functionData);
                 echo "<br/>";
