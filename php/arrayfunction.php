@@ -16,16 +16,12 @@
             $cars=array("model"=>array("type"=>"sport","name"=>"honda"));
             $keywithcolorsarray=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
             $keywithcolorsarray2=array("a"=>"red","b"=>"green","c"=>"bluee");
-            print_r($namearray);
-            echo "<br/>";
-            print_r($numberarray);
-            echo "<br/>";
-            print_r($namewithkey);
-            echo "<br/>";
-            print_r($colors);
-            echo "<br/>";
-            print_r($cars);
-            echo "<br/>";
+            printData($namearray);
+            printData($domainarray);
+            printData($numberarray);
+            printData($namewithkey);
+            printData($colors);
+            printData($cars);
             echo "<br/>";
             // split an array in the given number in parameter
             printData(array_chunk($namearray,1));
