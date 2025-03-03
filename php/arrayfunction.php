@@ -68,8 +68,6 @@
             printData(array_key_first($namewithkey));
             printData(array_key_last($namewithkey));
             printData(array_walk($domainarray,"walkfun"));
-
-
             function walkfun($value,$key){
                 echo "$key => $value<br/>";
             }
