@@ -7,21 +7,23 @@
     </head>
     <body>
         <?php 
-            echo "This is array for the examples.<br/>";
-            $namearray=array("Rohan","Meet","Meet");
-            $domainarray=array("PHP","Python","HTML");
-            $numberarray=array(5,10,3);
-            $namewithkey=array("a"=>"Rohan","b"=>"Parikh");
-            $colors=array("o"=>"orange","r"=>"red");
-            $cars=array("model"=>array("type"=>"sport","name"=>"honda"));
-            $keywithcolorsarray=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
-            $keywithcolorsarray2=array("a"=>"red","b"=>"green","c"=>"bluee");
-            printData($namearray);
-            printData($domainarray);
-            printData($numberarray);
-            printData($namewithkey);
-            printData($colors);
-            printData($cars);
+            echo "<b>This is array for the examples.</b><br/>";
+            echo "<i>";
+                $namearray=array("Rohan","Meet","Meet");
+                $domainarray=array("PHP","Python","HTML");
+                $numberarray=array(5,10,3);
+                $namewithkey=array("a"=>"Rohan","b"=>"Parikh");
+                $colors=array("o"=>"orange","r"=>"red");
+                $cars=array("model"=>array("type"=>"sport","name"=>"honda"));
+                $keywithcolorsarray=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
+                $keywithcolorsarray2=array("a"=>"red","b"=>"green","c"=>"bluee");
+                printData($namearray);
+                printData($domainarray);
+                printData($numberarray);
+                printData($namewithkey);
+                printData($colors);
+                printData($cars);
+            echo "</i>";
             echo "<br/>";
             // split an array in the given number in parameter
             printData(array_chunk($namearray,1));
@@ -81,13 +83,26 @@
                 echo "<br/>";
             }
             //Arrow function
-            echo "<br/><br/>Arrow function<br/>";
+            echo "<br/><br/><b>Arrow function</b><br/>";
             $arr = [1, 2, 3, 4, 5];
             $arr = array_map(fn($n) => $n * $n, $arr);
             print_r($arr);
             echo "<br/>";
             $func = fn($a,$b)=>$a+$b;
             echo $func(5,10);
+            //Annonyms function
+            echo "<br/><br/><b>Annonyms function</b><br/>";
+            $func = function($a,$b){
+                return $a+$b;
+            };
+            echo $func(5,10);
+            //Annonyms recursive function
+            echo "<br/><br/><b>Annonyms recursive function</b><br/>";
+            $sumNumbers = function($n) use (&$sumNumbers) {
+                if ($n <= 1) return 1; 
+                return $n + $sumNumbers($n - 1);
+            };
+            echo $sumNumbers(10);
         ?>
     </body>
 </html>
