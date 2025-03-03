@@ -80,6 +80,14 @@
                 print_r($functionData);
                 echo "<br/>";
             }
+            //Arrow function
+            echo "<br/><br/>Arrow function<br/>";
+            $arr = [1, 2, 3, 4, 5];
+            $arr = array_map(fn($n) => $n * $n, $arr);
+            print_r($arr);
+            echo "<br/>";
+            $func = fn($a,$b)=>$a+$b;
+            echo $func(5,10);
         ?>
     </body>
 </html>
